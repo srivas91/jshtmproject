@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>    
+        h2
+        {
+         font-style:italic;
+         color:blue;
+        }
+        h3
+        {
+            font-family:roberto;
+            color:blue;
+            font-size:24px;
+            text-shadow:5px 5px 5px purple;                                                                                                                                                                                               
+        }
+        #id1
+        {
+          text-align:center;
+         }
+    </style>
+</head>
+<body>
+    <div id="id1"><h2>Akash Hi-Fi Textiles</h2>
+    <h3>We are launching Soon</h3>
+    <span id="day"></span> Days:
+    <span id="hour"></span> Hours:
+    <span id="minute"></span> Minutes:
+    <span id="second"></span> Seconds</div>
+    <script>
+        function countDown(){
+            const countDate=new Date("Mar 20, 2024 15:30:00").getTime();
+            const now=new Date().getTime();  
+            const gap=countDate-now;
+        
+        const second=1000;
+        const minute=second*60;
+        const hour=minute*60;
+        const day=hour*24;
+
+        const textDay=Math.floor(gap/day);
+        const textHour=Math.floor((gap%day)/hour);
+        const textMinute=Math.floor((gap%hour)/minute);
+        const textSecond=Math.floor((gap%minute)/second);
+        
+        document.querySelector("#day").innerText=textDay;
+        document.querySelector("#hour").innerText=textHour;
+        document.querySelector("#minute").innerText=textMinute;
+        document.querySelector("#second").innerText=textSecond;
+        }
+        setInterval(countDown,1000);
+        </script>
+</body>
+</html>

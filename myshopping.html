@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopping cart</title>
+    <style>
+        #myspan
+        {
+            margin-top:200px;
+        }
+        .fa-shopping-cart
+        {
+            top:400px;
+            color:blue;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <button id="btninc" onclick="incrementCounter()">+</button>
+    <span id="myitem"><i class="fas fa-shopping-cart"></i></span><span id="myspan"></span>
+    <button id="btndec" onclick="decrementCounter()">-</button>
+    <script>
+        var mobiles=[];
+        var vivo={'id':1001,'model':'vivo y11','RAM':'4 GB','ROM':'64 GB','battery':'3500 mah'};
+        var oppo={'id':1002,'model':'oppo F3','RAM':'3 GB','ROM':'32 GB','battery':'3000 mah'};
+        mobiles.push(vivo);
+        mobiles.push(oppo);
+        
+        class Mobile{
+            constructor(a,b,c,d,e)
+            {
+                this.id=a;
+                this.model=b;
+                this.ram=c;
+                this.rom=d;
+                this.battery=e;
+            }
+        }
+
+       for(let i of mobiles)
+       {
+        document.write('<ul style="list-style-type:none;border:2px solid blue;width:200px">');
+            document.write("<li>Model:"+i['model']+"</li>");
+           document.write("<li>RAM:"+i['RAM']+"</li>");
+           document.write("<li>ROM:"+i['ROM']+"</li>");
+           document.write("<li>Battery:"+i['battery']+"</li>");
+          let m=new Mobile(i['id'],i['model'],i['RAM'],i['ROM'],i['battery']);
+           document.write('<button onclick="incrementCounter('+m+')"><i class="fa-thin fa-plus"></i></button>');
+           document.write('<button onclick="decrementCounter(this.id)">-</button>');
+
+           document.write('</ul>');
+        //    document.write(i['ROM']);
+        //    document.write(i['battery']);
+       }
+       
+        var s=document.getElementById("myspan");
+        var count=0;
+        function incrementCounter(d)
+        {
+            // mobile.
+           console.log(d);
+           count=count+1;    
+            s.innerHTML=count;
+        }
+        function decrementCounter()
+        {
+            if(count==0)
+            {
+                alert('cannot decrement counter');
+            }
+            else
+            {
+            count=count-1;    
+            s.innerHTML=count;
+            }
+        }
+    </script>
+</body>
+</html>

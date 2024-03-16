@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery slider</title>
+    <link href= 
+    "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+        rel="stylesheet" /> 
+    <script src="https://code.jquery.com/jquery-1.10.2.js"> 
+    </script> 
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"> 
+    </script> 
+    <style>
+        #id1
+        {
+            border:3px solid blue;
+            padding:10px;
+        }
+        #id2
+        {
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#id1").click(function(){
+              $("#id2").slideToggle();
+            });
+           
+          });
+    </script>
+</head>
+<body>
+    <button id="id1">Mobile Specification</button>
+    <div id="id2">RAM:8GB <br/> Processor:Qualcomm Snapdragon </div>
+</body>
+</html>

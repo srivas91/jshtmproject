@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $("h1, h2").addClass("blue");
+            $("div").addClass("important");
+          });
+        });
+        </script>
+        <style>
+            .blue
+            {
+                color:blue;
+            }
+            .important
+            {
+                font-weight: bold;
+                font-size:xx-large;
+            }
+        </style>
+</head>
+<body>
+  <h1>Latest Technology</h1>
+  <h2>Blockchain</h2>
+  <div>I am ready to learn JQuery</div>
+  <button>Add classes to elements</button>
+</body>
+</html>

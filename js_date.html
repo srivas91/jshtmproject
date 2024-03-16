@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Current Date</title>
+</head>
+<body>
+    <script>
+        var cdate=new Date("Feb 2 2022");
+        var cyear=cdate.getFullYear();
+        var cmonth=cdate.getMonth();
+        var month=cmonth+1;
+        var curdate=cdate.getDate();
+        console.log(curdate);
+        // console.log(month);
+        console.log(cyear);
+        
+        // console.log(curdate);
+        var smonth=month.toString();
+        var sdate=curdate.toString();
+        if(smonth.length<2)  
+        {
+            smonth="0"+smonth;
+        }
+        if(sdate.length<2)
+        {
+            sdate="0"+sdate;
+        }
+        console.log(smonth);
+        fulldate=sdate+"/"+smonth+"/"+cyear;
+        console.log(fulldate);
+        document.write(`current date is ${fulldate}`);
+    </script>
+</body>
+</html>
